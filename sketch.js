@@ -4,7 +4,6 @@ let naranja = 10
 let azul = 200
 let magenta = 300
 let verde = 130
-let divhue = 4%360;
 let font;
 
 function preload() {
@@ -18,7 +17,8 @@ function setup() {
 }
 
 function draw() {
-  background((mouseX+mouseY)/divhue,50,100);
+  let colorDinamico = map(mouseX + mouseY, 0, windowWidth + windowHeight, 0, 360);
+  background(colorDinamico, 50, 100);
   pointLight(80, 50, 80, 200, 100, 100);
   
 push();
